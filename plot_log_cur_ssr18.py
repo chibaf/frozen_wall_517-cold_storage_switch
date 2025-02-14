@@ -62,10 +62,10 @@ while True:
   print("TC1",array2[5])
   if float(array2[5])>-15.0:
     GPIO.output(ssr_pin,1)
-    fssr18.write("SSR18 on\n")
+#    fssr18.write(st+", SSR18 on\n")
   else:
     GPIO.output(ssr_pin, 0)
-    fssr18.write("SSR18 off\n")
+#    fssr18.write(st+", SSR18 off\n")
   ss=st+ss[1:5]+","+str(rttime)+","
   ss12=ss
   ss=ss+str(cur)+","
