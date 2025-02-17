@@ -64,19 +64,24 @@ while True:
   else:
     cur=float(curr2[1])
   array2=sport.read_logger(ser3)
+  sum=0.0
+  for i in range(0,10):
+    sum=sum+array2[i]
+  if sum==0.0:
+    continue
 #  print("TC1",array2[5])
   if float(array2[5])>-15.0:
     if ttime <=ctime+1500.0:
-      ssr18="ON"
+      ssr18="1"
       GPIO.output(ssr_pin,1)
     if ctime+1500<=ttime<=ctime+1800:
-      ssr18="OFF"
+      ssr18="0"
       GPIO.output(ssr_pin,0)
     if ctime+1800<ttime:
       f18=0
 #    fssr18.write(st+", SSR18 on\n")
   else:
-    ssr18="OFF"
+    ssr18="0"
     GPIO.output(ssr_pin, 0)
 #    fssr18.write(st+", SSR18 off\n")
   ss=st+ss[1:5]+","+str(rttime)+","
