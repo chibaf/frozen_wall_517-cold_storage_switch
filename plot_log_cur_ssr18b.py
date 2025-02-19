@@ -69,7 +69,6 @@ while True:
     sum=sum+array2[i]
   if sum==0.0:
     continue
-#  print("TC1",array2[5])
   if float(array2[5])>-15.0:
     if ttime <=ctime+1500.0:
       ssr18="1"
@@ -79,11 +78,9 @@ while True:
       GPIO.output(ssr_pin,0)
     if ctime+1800<ttime:
       f18=0
-#    fssr18.write(st+", SSR18 on\n")
   else:
     ssr18="0"
     GPIO.output(ssr_pin, 0)
-#    fssr18.write(st+", SSR18 off\n")
   ss=st+ss[1:5]+","+str(rttime)+","
   ss12=ss
   ss=ss+str(cur)+","
