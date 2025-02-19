@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+#
 from datetime import date
 import time
 import matplotlib.pyplot as plt
@@ -7,24 +7,24 @@ import serial
 import RPi.GPIO as GPIO
 import os
 import sys
-
+#
 ssr_pin=18
 gid=str(ssr_pin)
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(ssr_pin,GPIO.OUT)
 fssr18=open("ssr18.log",'a',encoding="utf-8")
-
+#
 from read_m5_class import m5logger
 from readser_class import readser
-
+#
 today = date.today()
 t=time.localtime()
 current_time=time.strftime("_H%H_M%M_S%S",t)
 fn="ACS_LOG_"+str(today)+current_time+".csv"
 f=open(fn,'w',encoding="utf-8")
 start = time.time()
-
+#
 ldata0=[0]*10
 ldata=[ldata0]*10
 ser1 = serial.Serial("/dev/ttyACM0",9600)
@@ -33,13 +33,13 @@ ser3 = serial.Serial("/dev/ttyUSB0",115200)
 read_ser1=readser()
 read_ser2=readser()
 sport=m5logger()
-
+#
 data=[0]*10
 data02=[0]*3
 data2=[data02]*10
 data03=[0]*10
 data3=[data03]*10
-
+#
 ssr18=""
 f18=0
 while True:
