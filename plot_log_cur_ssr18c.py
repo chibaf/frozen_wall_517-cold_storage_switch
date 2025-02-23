@@ -14,7 +14,6 @@ GPIO.setup(11,GPIO.OUT)
 GPIO.setup(12,GPIO.OUT)
 GPIO.setup(13,GPIO.OUT)
 GPIO.setup(18,GPIO.OUT)
-fssr18=open("ssr18.log",'a',encoding="utf-8")
 #
 from read_m5_class import m5logger
 from readser_class import readser
@@ -151,7 +150,6 @@ while True:
   GPIO.output(18, False)
   GPIO.output(13, False)
   f.close()
-  fssr18.close()
   ser1.close()
   ser2.close()
   ser3.close()

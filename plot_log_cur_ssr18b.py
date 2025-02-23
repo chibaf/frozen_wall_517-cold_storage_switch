@@ -13,7 +13,6 @@ gid=str(ssr_pin)
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(ssr_pin,GPIO.OUT)
-fssr18=open("ssr18.log",'a',encoding="utf-8")
 #
 from read_m5_class import m5logger
 from readser_class import readser
@@ -130,7 +129,6 @@ while True:
  except KeyboardInterrupt:
   GPIO.output(ssr_pin, False)
   f.close()
-  fssr18.close()
   ser1.close()
   ser2.close()
   ser3.close()
