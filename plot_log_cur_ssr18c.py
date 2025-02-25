@@ -13,7 +13,8 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(11,GPIO.OUT)
 GPIO.setup(12,GPIO.OUT)
 GPIO.setup(13,GPIO.OUT)
-GPIO.setup(18,GPIO.OUT)
+GPIO.setup(15,GPIO.OUT) # pump
+GPIO.setup(18,GPIO.OUT) # freezer
 #
 from read_m5_class import m5logger
 from readser_class import readser
@@ -98,6 +99,8 @@ while True:
   else:
     ssr18="0"
     GPIO.output(18, 0)
+  GPIO.output(15,1) # pump on
+  ssr15="1"
   ss=st+ss[1:5]+","+str(rttime)+","
   ss12=ss
   ss=ss+str(cur)+","
@@ -148,6 +151,7 @@ while True:
   GPIO.output(11, False)
   GPIO.output(12, False)
   GPIO.output(18, False)
+  GPIO.output(15, False)
   GPIO.output(13, False)
   f.close()
   ser1.close()
