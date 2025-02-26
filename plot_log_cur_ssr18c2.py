@@ -75,14 +75,14 @@ while True:
   for i in range(0,10):
     sum=sum+array2[i]
 # SSR 11,12,13,18
-# SSR 11,12,13 on:5sec,off:5sec
+# SSR 11,12,13 on:1sec,off:9sec
   if sum==0.0:
     continue
-  if stime+5>=ttime:
+  if stime+1>=ttime:
     GPIO.output(11,1)
     GPIO.output(12,1)
     GPIO.output(13,1)
-  if stime+10>=ttime>stime+5:
+  if stime+10>=ttime>stime+1:
     GPIO.output(11,0)
     GPIO.output(12,0)
     GPIO.output(13,0)
